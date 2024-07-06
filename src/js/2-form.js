@@ -19,7 +19,7 @@ if (storedFormData !== null) {
 
 form.addEventListener('input', evt => {
   if (evt.target.name === 'email' || evt.target.name === 'message') {
-    formData[evt.target.name] = evt.target.value;
+    formData[evt.target.name] = evt.target.value.trim();
   }
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 });
