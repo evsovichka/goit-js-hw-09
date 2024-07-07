@@ -28,6 +28,7 @@ form.addEventListener('submit', evt => {
   evt.preventDefault();
   if (input.value === '' || textarea.value === '') {
     alert('«Fill please all fields»');
+    return;
   }
   console.log(formData);
   localStorage.removeItem('feedback-form-state');

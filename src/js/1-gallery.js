@@ -67,12 +67,11 @@ const images = [
   },
 ];
 const gallery = document.querySelector('.gallery');
-function createMurkup(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    const markup = arr
-      .map(
-        ({ preview, original, description }) =>
-          `<li class="gallery-item">
+function createMarkup(arr) {
+  const markup = arr
+    .map(
+      ({ preview, original, description }) =>
+        `<li class="gallery-item">
   <a class="gallery-link" href= "${original}">
     <img
       class="gallery-image"
@@ -82,14 +81,13 @@ function createMurkup(arr) {
   </a>
 </li>
 `
-      )
-      .join(' ');
-    return markup;
-  }
+    )
+    .join(' ');
+  return markup;
 }
-gallery.insertAdjacentHTML('afterbegin', createMurkup(images));
+gallery.insertAdjacentHTML('afterbegin', createMarkup(images));
 
-let OpenGallery = new SimpleLightbox('.gallery a', {
+const OpenGallery = new SimpleLightbox('.gallery a', {
   captions: true,
   captionType: 'attr',
   captionsData: 'alt',
