@@ -26,7 +26,7 @@ form.addEventListener('input', evt => {
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
-  if (input.value === '' || textarea.value === '') {
+  if (input.value.trim() === '' || textarea.value.trim() === '') {
     alert('«Fill please all fields»');
     return;
   }
